@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AgoraVideo</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="app_id">e1285fe24acd42c49563a2efb1d88114</string>
+    <string name="agora_token">007eJxTYBDlOKyYO6f9wMpj+6YaTwq7kGr2zGRpzrLLe/guC4ofe6+nwJBqaGRhmpZqZJKYnGJilGxiaWpmnGiUmpZkmGJhYWhoktmUndwQyMiwN8mTmZEBAkF8Zoa8/HIGBgA2XB8G</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_channel_name">Enter Channel name</string>
+
+</resources>

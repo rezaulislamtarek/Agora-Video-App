@@ -15,7 +15,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     private val appId = "e1285fe24acd42c49563a2efb1d88114"
     private val channelName = "DT123"
     private val token =
-        "007eJxTYPB+eOq2YWCB+/ver9wMy3KDmy7eZdTd7Zm4KqbgrDrj+5MKDKmGRhamaalGJonJKSZGySaWpmbGiUapaUmGKRYWhoYm0z2LkxsCGRnmKyazMDJAIIjPyuASYmhkzMAAAHJGHog="
+        "007eJxTYLhXueHijH9LmEWUovP6tSo7JvgbKKaut7m/4daCa6sZ6k0UGFINjSxM01KNTBKTU0yMkk0sTc2ME41S05IMUywsDA1NVmcVJzcEMjJsk5zEysgAgSA+K4NLiKGRMQMDAGoCHrU="
     var agoraEngine: RtcEngine? = null
     var remoteSurfaceView: SurfaceView? = null
     var localSurfaceView: SurfaceView? = null
@@ -41,10 +41,9 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     fun setupRemoteVideo(uid: Int) {
         containerRemote = binding.remoteVideoViewContainer
         remoteSurfaceView = SurfaceView(context)
-       // remoteSurfaceView?.setZOrderMediaOverlay(true)
+        //remoteSurfaceView?.setZOrderMediaOverlay(true)
         ///////
-        setupLocalVideo(true)
-        containerLocal.addView(remoteSurfaceView)
+        containerRemote.addView(remoteSurfaceView)
 
 
         agoraEngine!!.setupRemoteVideo(
@@ -65,8 +64,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         // Create a SurfaceView object and add it as a child to the FrameLayout.
         localSurfaceView = SurfaceView(context)
         localSurfaceView?.setZOrderMediaOverlay(true)
-        if(flag==false) containerLocal.addView(localSurfaceView)
-        else containerRemote.addView(localSurfaceView)
+        containerLocal.addView(localSurfaceView)
         // Pass the SurfaceView object to Agora so that it renders the local video.
 
         agoraEngine!!.setupLocalVideo(

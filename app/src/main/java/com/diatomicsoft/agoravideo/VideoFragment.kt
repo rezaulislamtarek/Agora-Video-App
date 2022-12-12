@@ -3,11 +3,9 @@ package com.diatomicsoft.agoravideo
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.SurfaceView
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -15,8 +13,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.diatomicsoft.agoravideo.databinding.FragmentVideoBinding
-import io.agora.rtc2.*
-import io.agora.rtc2.video.VideoCanvas
+import io.agora.rtc.IRtcEngineEventHandler
+import io.agora.rtc.RtcEngine
 
 
 class VideoFragment : Fragment() {
@@ -47,6 +45,45 @@ class VideoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentVideoBinding.inflate(layoutInflater, container, false)
+
+        val displayMetrics = DisplayMetrics()
+        requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val defaultHeight = displayMetrics.heightPixels
+        val defaultWidth = displayMetrics.widthPixels
+
+/*        vto.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                mainBinding.saveView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                frameHeight = mainBinding.image.measuredHeight
+                frameWidth = mainBinding.image.measuredWidth
+                if (frameHeight == 0 || frameHeight < 0) frameHeight = 500
+                if (frameWidth == 0 || frameWidth < 0) frameWidth = 400
+                defaultHeight = frameHeight
+                defaultWidth = frameWidth
+                if (intent.getStringExtra("quoteFromEdit") != null) {
+                    val split = intent.getStringExtra("quoteFromEdit")!!
+                        .split("^")
+                    quoteFromEdit = if (split.size == 1) {
+                        intent.getStringExtra("quoteFromEdit").toString()
+                    } else "${split[0]}${split[1]}"
+                    addTextSticker(quoteFromEdit)
+                } else if (isFromDesign) {
+                    if (template.heightRatio != 0.0) resizeWindow(
+                        template.widthRatio,
+                        template.heightRatio
+                    )
+                    if (template.fonts != null) {
+                        for (font in template.fonts!!) addStickerFromDesign(
+                            font,
+                            frameHeight,
+                            frameWidth
+                        )
+                    }
+                } else addTextSticker("Double Tap to Edit")
+            } *//*  public boolean onPreDraw() {
+
+            }*//*
+        })*/
 
         agoraHelper = AgoraHelper(requireContext(), binding)
 

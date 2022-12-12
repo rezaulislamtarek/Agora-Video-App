@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.diatomicsoft.agoravideo.R
 import com.diatomicsoft.agoravideo.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -46,7 +44,7 @@ class HomeFragment : Fragment() {
             val channelName = binding.etChannelName.text.toString()
             val bundle = Bundle()
             bundle.putString("arg", channelName)
-            findNavController().navigate(R.id.action_navigation_home_to_videoFragment, bundle)
+           // findNavController().navigate(R.id.action_navigation_home_to_videoFragment, bundle)
         }
     }
 }

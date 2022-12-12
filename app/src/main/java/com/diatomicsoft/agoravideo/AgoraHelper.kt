@@ -6,8 +6,11 @@ import android.view.SurfaceView
 import android.view.View
 import android.widget.FrameLayout
 import com.diatomicsoft.agoravideo.databinding.FragmentVideoBinding
-import io.agora.rtc2.*
-import io.agora.rtc2.video.VideoCanvas
+import io.agora.rtc.IRtcEngineEventHandler
+import io.agora.rtc.RtcEngine
+import io.agora.rtc.RtcEngineConfig
+import io.agora.rtc.models.ChannelMediaOptions
+import io.agora.rtc.video.VideoCanvas
 
 
 class AgoraHelper(private val context: Context, private val binding: FragmentVideoBinding) {
@@ -15,7 +18,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     private val appId = "e1285fe24acd42c49563a2efb1d88114"
     private val channelName = "DT123"
     private val token =
-        "007eJxTYLhXueHijH9LmEWUovP6tSo7JvgbKKaut7m/4daCa6sZ6k0UGFINjSxM01KNTBKTU0yMkk0sTc2ME41S05IMUywsDA1NVmcVJzcEMjJsk5zEysgAgSA+K4NLiKGRMQMDAGoCHrU="
+        "007eJxTYNDOuZlavEmVK/bj51vcFVq7K/dvjeSek5NgNU//7kcn4wIFBgtLyySTlCTDJMskUxMjM/NEI+NkU0MLUxNzU2MLM0PDA4umJTcEMjL4rBVnYmSAQBCflcElxNDImIEBAB+rHYM="
     var agoraEngine: RtcEngine? = null
     var remoteSurfaceView: SurfaceView? = null
     var localSurfaceView: SurfaceView? = null
@@ -79,9 +82,9 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
 
     fun joinChannel() {
         val options = ChannelMediaOptions()
-        options.channelProfile = Constants.CHANNEL_PROFILE_COMMUNICATION
+       /* options.channelProfile = Constants.CHANNEL_PROFILE_COMMUNICATION
         // Set the client role as BROADCASTER or AUDIENCE according to the scenario.
-        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER
+        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER*/
         // Display LocalSurfaceView.
         setupLocalVideo()
         localSurfaceView?.visibility = View.VISIBLE
@@ -89,7 +92,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         agoraEngine?.startPreview()
         // Join the channel with a temp token.
         // You need to specify the user ID yourself, and ensure that it is unique in the channel.
-        agoraEngine?.joinChannel(token, channelName, uid, options)
+        agoraEngine?.joinChannel(token, channelName,"", uid, options)
 
         //mute option
         agoraEngine?.adjustAudioMixingVolume(0)

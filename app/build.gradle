@@ -51,8 +51,9 @@ dependencies {
 
     def agora_version = "4.0.1"
     implementation "io.agora.rtc:full-rtc-basic:${agora_version}"
-    implementation "io.agora.rtc:full-video-preprocess:3.6.2"
     implementation "io.agora.rtc:full-jnd:3.6.2"
+    implementation "io.agora.rtc:full-ains:3.6.2"
+    implementation "io.agora.rtc:full-super-resolution:3.6.2"
 
 
     //GPU image filtering

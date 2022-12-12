@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.diatomicsoft.agoravideo"
@@ -36,7 +36,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -51,8 +51,8 @@ dependencies {
 
     def agora_version = "4.0.1"
     implementation "io.agora.rtc:full-rtc-basic:${agora_version}"
-/*    implementation "io.agora.rtc:full-video-preprocess:${agora_version}"
-    implementation "io.agora.rtc:full-jnd:${agora_version}"*/
+    implementation "io.agora.rtc:full-video-preprocess:3.6.2"
+    implementation "io.agora.rtc:full-jnd:3.6.2"
 
 
     //GPU image filtering

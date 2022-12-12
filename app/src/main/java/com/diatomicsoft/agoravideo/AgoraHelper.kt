@@ -6,10 +6,7 @@ import android.view.SurfaceView
 import android.view.View
 import android.widget.FrameLayout
 import com.diatomicsoft.agoravideo.databinding.FragmentVideoBinding
-import io.agora.rtc2.ChannelMediaOptions
-import io.agora.rtc2.IRtcEngineEventHandler
-import io.agora.rtc2.RtcEngine
-import io.agora.rtc2.RtcEngineConfig
+import io.agora.rtc2.*
 import io.agora.rtc2.video.VideoCanvas
 
 
@@ -45,7 +42,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     fun setupRemoteVideo(uid: Int) {
         containerRemote = binding.remoteVideoViewContainer
         remoteSurfaceView = SurfaceView(context)
-        //remoteSurfaceView?.setZOrderMediaOverlay(true)
+        remoteSurfaceView?.setZOrderMediaOverlay(true)
         ///////
         containerRemote.addView(remoteSurfaceView)
 
@@ -67,7 +64,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         containerLocal = binding.localVideoViewContainer
         // Create a SurfaceView object and add it as a child to the FrameLayout.
         localSurfaceView = SurfaceView(context)
-        localSurfaceView?.setZOrderMediaOverlay(true)
+        //localSurfaceView?.setZOrderMediaOverlay(true)
         containerLocal.addView(localSurfaceView)
         // Pass the SurfaceView object to Agora so that it renders the local video.
 
@@ -83,9 +80,9 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
 
     fun joinChannel() {
         val options = ChannelMediaOptions()
-       /* options.channelProfile = Constants.CHANNEL_PROFILE_COMMUNICATION
+        options.channelProfile = Constants.CHANNEL_PROFILE_COMMUNICATION
         // Set the client role as BROADCASTER or AUDIENCE according to the scenario.
-        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER*/
+        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER
         // Display LocalSurfaceView.
         setupLocalVideo()
         localSurfaceView?.visibility = View.VISIBLE

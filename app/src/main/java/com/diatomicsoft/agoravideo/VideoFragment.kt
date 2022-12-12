@@ -13,8 +13,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.diatomicsoft.agoravideo.databinding.FragmentVideoBinding
-import io.agora.rtc.IRtcEngineEventHandler
-import io.agora.rtc.RtcEngine
+import io.agora.rtc2.IRtcEngineEventHandler
+import io.agora.rtc2.RtcEngine
 
 
 class VideoFragment : Fragment() {

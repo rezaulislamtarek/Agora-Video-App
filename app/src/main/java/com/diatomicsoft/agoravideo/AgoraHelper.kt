@@ -6,11 +6,11 @@ import android.view.SurfaceView
 import android.view.View
 import android.widget.FrameLayout
 import com.diatomicsoft.agoravideo.databinding.FragmentVideoBinding
-import io.agora.rtc.IRtcEngineEventHandler
-import io.agora.rtc.RtcEngine
-import io.agora.rtc.RtcEngineConfig
-import io.agora.rtc.models.ChannelMediaOptions
-import io.agora.rtc.video.VideoCanvas
+import io.agora.rtc2.ChannelMediaOptions
+import io.agora.rtc2.IRtcEngineEventHandler
+import io.agora.rtc2.RtcEngine
+import io.agora.rtc2.RtcEngineConfig
+import io.agora.rtc2.video.VideoCanvas
 
 
 class AgoraHelper(private val context: Context, private val binding: FragmentVideoBinding) {
@@ -28,6 +28,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     lateinit var containerLocal: FrameLayout
 
     fun setupVideoSDKEngine(mRtcEventHandler: IRtcEngineEventHandler) {
+
         try {
             val config = RtcEngineConfig()
             config.mContext = context
@@ -92,7 +93,7 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         agoraEngine?.startPreview()
         // Join the channel with a temp token.
         // You need to specify the user ID yourself, and ensure that it is unique in the channel.
-        agoraEngine?.joinChannel(token, channelName,"", uid, options)
+        agoraEngine?.joinChannel(token, channelName, uid, options)
 
         //mute option
         agoraEngine?.adjustAudioMixingVolume(0)

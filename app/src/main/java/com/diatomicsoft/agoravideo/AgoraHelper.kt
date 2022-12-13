@@ -15,8 +15,8 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
     private val appId = "e1285fe24acd42c49563a2efb1d88114"
     private val channelName = "DT123"
     private val token =
-        "007eJxTYNDOuZlavEmVK/bj51vcFVq7K/dvjeSek5NgNU//7kcn4wIFBgtLyySTlCTDJMskUxMjM/NEI+NkU0MLUxNzU2MLM0PDA4umJTcEMjL4rBVnYmSAQBCflcElxNDImIEBAB+rHYM="
-    var agoraEngine: RtcEngine? = null
+        "007eJxTYPjCN+n0g71tjqJ8P9f6XpjA5FE1ZY3LfL9r7HefML3ZV8atwJBqaGRhmpZqZJKYnGJilGxiaWpmnGiUmpZkmGJhYWhoslxwRnJDICOD2DM5FkYGCATxWRlcQgyNjBkYAJP9HuM="
+     var agoraEngine: RtcEngine? = null
     var remoteSurfaceView: SurfaceView? = null
     var localSurfaceView: SurfaceView? = null
     private val uid = 0
@@ -93,8 +93,8 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         agoraEngine?.joinChannel(token, channelName, uid, options)
 
         //mute option
-        agoraEngine?.adjustAudioMixingVolume(0)
-        agoraEngine?.adjustPlaybackSignalVolume(0);
+       // agoraEngine?.adjustAudioMixingVolume(0)
+        //agoraEngine?.adjustPlaybackSignalVolume(0);
     }
 
 
@@ -110,6 +110,11 @@ class AgoraHelper(private val context: Context, private val binding: FragmentVid
         }
     }
 
+    fun muteMike(){
+        agoraEngine?.adjustAudioMixingVolume(0)
+        agoraEngine?.adjustPlaybackSignalVolume(0)
+    }
+    
 }
 
 

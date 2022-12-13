@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tarek/AndroidStudioProjects/Agora-Video-App/app/src/main/res/drawable/btn_endcall.xml" value="0.2525" />
+        <entry key="..\:/Users/Tarek/AndroidStudioProjects/Agora-Video-App/app/src/main/res/drawable/btn_switch_camera.xml" value="0.2525" />
+        <entry key="..\:/Users/Tarek/AndroidStudioProjects/Agora-Video-App/app/src/main/res/drawable/btn_unmute.xml" value="0.2525" />
+        <entry key="..\:/Users/Tarek/AndroidStudioProjects/Agora-Video-App/app/src/main/res/drawable/icon_agora_large.xml" value="0.2525" />
+        <entry key="..\:/Users/Tarek/AndroidStudioProjects/Agora-Video-App/app/src/main/res/layout/fragment_video.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Tarek/AndroidStudioProjects/AgoraVideo/app/src/main/res/layout/activity_main.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Tarek/AndroidStudioProjects/AgoraVideo/app/src/main/res/layout/fragment_dashboard.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Tarek/AndroidStudioProjects/AgoraVideo/app/src/main/res/layout/fragment_home.xml" value="0.25" />
